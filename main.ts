@@ -1,6 +1,7 @@
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     info.changeScoreBy(-1)
     pause(500)
+    info.changeLifeBy(-1)
 })
 let mySprite = sprites.create(img`
     . . 4 4 4 . . . . 4 4 4 . . . . 
@@ -22,4 +23,5 @@ mySprite.setPosition(120, 41)
 tiles.setCurrentTilemap(tilemap`level1`)
 scene.cameraFollowSprite(mySprite)
 controller.moveSprite(mySprite)
-info.setScore(0)
+info.setScore(10)
+info.setLife(3)
