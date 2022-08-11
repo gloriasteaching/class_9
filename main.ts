@@ -3,7 +3,11 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     pause(500)
     info.changeLifeBy(-1)
 })
-let mySprite = sprites.create(img`
+info.onLifeZero(function () {
+    mySprite.sayText("ay!", 2000, true)
+})
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
     . . 4 4 4 . . . . 4 4 4 . . . . 
     . 4 5 5 5 e . . e 5 5 5 4 . . . 
     4 5 5 5 5 5 e e 5 5 5 5 5 4 . . 
